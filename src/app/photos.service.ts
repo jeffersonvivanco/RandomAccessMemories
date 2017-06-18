@@ -6,7 +6,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PhotosService {
-  private photosUrl = 'http://localhost:3000/api/photos';
+  // private photosUrl = 'http://localhost:3000/api/photos';
+  private photosUrl = '/api/photos';
   constructor(private http: Http) { }
   // Get photo objects from mongodb
   getPhotos(): Promise<Photo[]> {
