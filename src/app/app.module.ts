@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 
 // Each component must be declared in one and only one module
 import { PhotosComponent } from './photos.component';
+import { PhotoSearchComponent } from './photo-search.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PhotosComponent
+    PhotosComponent,
+    PhotoSearchComponent
   ],
   imports: [
     BrowserModule,

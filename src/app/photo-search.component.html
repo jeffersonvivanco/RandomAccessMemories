@@ -1,0 +1,9 @@
+<div id="search-component">
+  <input type="search" #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Search for photos by country..."/>
+  <div>
+    <div *ngFor="let photo of photos | async"  class="search-result">
+      {{photo.name}}
+    </div>
+  </div>
+</div>
+

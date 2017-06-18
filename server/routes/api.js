@@ -29,5 +29,21 @@ router.get('/photos', (req, res) => {
   });
 });
 
+//Get photos by country
+router.get('/photos/:id', (req, res) => {
+  Photo.find({country: req.params.id}, (err, photos, count) => {
+    if (err)
+      console.log(err);
+    res.json(photos.map((photo) => {
+      return {
+        "url" : photo.url,
+        "tags" : photo.tags,
+        "country" : photo.country,
+        "name" : photo.name
+      }
+    }));
+  });
+});
+
 
 module.exports = router;
