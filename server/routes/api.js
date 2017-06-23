@@ -5,7 +5,9 @@ const router = express.Router();
 const mongoose = require('mongoose');
 let Photo = mongoose.model('Photo');
 
-
+//Adding Redis
+const redisClient = require('redis').createClient;
+const redis = redisClient(6379, 'localhost');
 
 //Get api listening
 router.get('/', (req, res) => {

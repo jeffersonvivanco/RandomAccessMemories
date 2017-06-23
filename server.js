@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 const api = require('./server/routes/api');
 const app = express();
 
+
 //use cors
 app.use(cors());
 //global cors
