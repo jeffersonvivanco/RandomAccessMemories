@@ -10,6 +10,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'photos/:search',
+    component: PhotosComponent
+  },
+  {
     path: 'photos',
     component: PhotosComponent
   }
@@ -21,4 +25,3 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule {}
-

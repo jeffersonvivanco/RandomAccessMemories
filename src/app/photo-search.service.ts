@@ -3,13 +3,16 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Photo } from './photo';
+import { Searchresult} from './searchresult';
 
 @Injectable()
 export class PhotoSearchService {
-  // private photosUrl = 'http://localhost:3000/api/photos';
-  private photosUrl = '/api/photos';
+  private photosUrl = 'http://localhost:3000/api/photos/search';
+  // private photosUrl = '/api/photos';
   constructor(private http: Http) {}
   search(term: string): Observable<Photo[]> {
-    return this.http.get(`${this.photosUrl}/?name=${term}`).map(response => response.json() as Photo[]);
+    const result = this.http.get(`${this.photosUrl}/?country=${term}`).map(response => response.json() as Searchresult[]);
+    console.log('RESULT BELOW\n', result);
+    return this.http.get(`${this.photosUrl}?search_q=${term}`).map(response => response.json() as Photo[]);
   }
 }
