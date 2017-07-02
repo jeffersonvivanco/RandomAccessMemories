@@ -28,7 +28,7 @@ import { Searchresult} from './searchresult';
 export class PhotoSearchComponent implements OnInit {
   photos: Observable<Photo[]>;
   private searchTerms = new Subject<string>();
-  private searchq: string;
+  public searchq: string;
   constructor(
     private photoSearchService: PhotoSearchService,
     private router: Router,
@@ -51,7 +51,8 @@ export class PhotoSearchComponent implements OnInit {
     //   });
   }
   searchPhotos(): void {
-    this.router.navigate(['/photos', this.searchq]);
+    const search = this.searchq;
+    this.router.navigate(['/photos', search]);
   }
 
 }
